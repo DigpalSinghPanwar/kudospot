@@ -24,9 +24,8 @@ const WelcomePage = () => {
 
     try {
       const response = await loginUser(name);
-      console.log(response);
 
-      login(response?.user?._id); // Save to context
+      login(response?.user?._id);
       toast.success(`Welcome ${name}`);
       navigate("/landing");
     } catch (error) {

@@ -4,7 +4,6 @@ import axios from "./axios";
 export const loginUser = async (name) => {
   try {
     const response = await axios.post("/users/login", { name });
-    console.log(response, "login");
 
     const userId = response?.data?.user?._id;
     const userName = response?.data?.user?.name;
@@ -19,7 +18,6 @@ export const loginUser = async (name) => {
 export const getUsers = async () => {
   try {
     const response = await axios.get("/users");
-    console.log(response);
     return response.data;
   } catch (error) {
     throw error.response?.data?.error || "Failed to fetch users.";
@@ -31,11 +29,9 @@ export const getUsers = async () => {
 export const fetchFeed = async () => {
   try {
     const response = await axios.get("/kudos/feed");
-    console.log(response);
 
     return response.data;
   } catch (error) {
-    console.error("Error fetching feed:", error);
     throw error.response?.data?.error || "Failed to send kudos feed";
   }
 };
@@ -43,7 +39,6 @@ export const fetchFeed = async () => {
 export const sendKudo = async (data) => {
   try {
     const response = await axios.post("/kudos/send", data);
-    console.log(response);
 
     return response;
   } catch (error) {
@@ -54,7 +49,6 @@ export const sendKudo = async (data) => {
 export const kudoLike = async (kudoId, userId) => {
   try {
     const response = await axios.post("/kudos/like", { kudoId, userId });
-    console.log(response);
 
     return response;
   } catch (error) {
@@ -65,7 +59,6 @@ export const kudoLike = async (kudoId, userId) => {
 export const getKudosAnalytics = async (userId) => {
   try {
     const response = await axios.get(`/kudos/analytics/sent?userId=${userId}`);
-    console.log(response);
 
     return response;
   } catch (error) {
@@ -76,7 +69,6 @@ export const getKudosAnalytics = async (userId) => {
 export const getLeaderboard = async () => {
   try {
     const response = await axios.get("/kudos/analytics/leaderboard");
-    console.log(response);
 
     return response;
   } catch (error) {
