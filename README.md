@@ -115,3 +115,19 @@ Start the frontend development server:
 ```bash
 npm run dev
 ```
+
+## **Predefined Users for Login**
+
+# **Below are four predefined users for testing the application**
+
+# **Name**
+
+- John Cena
+
+- Roman Reigns
+
+- AJ Styles
+
+- Brock Lesnar
+
+# **Use these names during the login process to test the application functionality.**
